@@ -24,7 +24,7 @@ def save():
     tarefa = { "texto": texto, "concluida": status }
     tarefas.append(tarefa)
 
-    return redirect('https://5000-aquamarine-dinosaur-002euhl2.ws-us18.gitpod.io/')
+    return redirect('https://5000-amethyst-aardvark-kj35cvxz.ws-us18.gitpod.io/')
 
 @app.route('/busca', methods=['POST'])
 def pes():
@@ -48,7 +48,7 @@ def apagar():
     texto=request.form['texto']
     lista_deletada=0
     for i in tarefas:
-        if texto in i['texto']:
+        if texto == i['texto']:
             tarefas.remove(i)
             lista_deletada+=1
     if lista_deletada==0:
