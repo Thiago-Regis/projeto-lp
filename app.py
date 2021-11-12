@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
@@ -43,8 +43,11 @@ def pes():
 def teste_delete():
     return render_template('teste_delete.html')
 
-
-        
+@app.route('/apagar',methods=['POST'])
+def apagar():
+    texto=request.form['texto']
+    return texto
+       
 app.run(debug=True)
 
 
