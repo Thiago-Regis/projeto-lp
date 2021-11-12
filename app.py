@@ -46,7 +46,14 @@ def teste_delete():
 @app.route('/apagar',methods=['POST'])
 def apagar():
     texto=request.form['texto']
-    return texto
+    lista_deletada=[]
+    for index,i in enumerate (tarefas):
+        if texto in i:
+             tarefas.remove(index)
+             lista_deletada.append(i)
+    if not lista_deletada:
+        return render_template('erro.html')
+    return render_template('index.html',lista_3=tarefas)
        
 app.run(debug=True)
 
