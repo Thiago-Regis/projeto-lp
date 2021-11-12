@@ -39,6 +39,9 @@ def pes():
 
     return render_template('busca.html', lista2=result)  
 
+@app.route('/teste_delete')
+def teste_delete():
+    return render_template('teste_delete.html')
 
 
         
