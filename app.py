@@ -24,7 +24,7 @@ def save():
     tarefa = { "texto": texto, "concluida": status }
     tarefas.append(tarefa)
 
-    return redirect('https://5000-cyan-pig-k8e57iy3.ws-us18.gitpod.io/')
+    return redirect('https://5000-aquamarine-dinosaur-002euhl2.ws-us18.gitpod.io/')
 
 @app.route('/busca', methods=['POST'])
 def pes():
@@ -46,14 +46,14 @@ def teste_delete():
 @app.route('/apagar',methods=['POST'])
 def apagar():
     texto=request.form['texto']
-    lista_deletada=[]
-    for index,i in enumerate (tarefas):
-        if texto in i:
-             tarefas.remove(index)
-             lista_deletada.append(i)
-    if not lista_deletada:
+    lista_deletada=0
+    for i in tarefas:
+        if texto in i['texto']:
+            tarefas.remove(i)
+            lista_deletada+=1
+    if lista_deletada==0:
         return render_template('erro.html')
-    return render_template('index.html',lista_3=tarefas)
+    return render_template('index.html',lista=tarefas)
        
 app.run(debug=True)
 
