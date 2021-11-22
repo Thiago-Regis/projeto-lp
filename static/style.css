@@ -1,22 +1,22 @@
+.erro{
+  margin: 20px;
+  color:red;
+}
 
+h2{
+  margin-bottom: 20px;
+  text-align: center;  
+  color: black; 
+}
+h3{
+  color:red;
+}
 
+body{
+  background-color: #7bd3f7;
+}
 
-:root {
-    --header-height: 4.5rem;
-    /*Colors*/
-    --hue: 221;
-    --base-color: hsl(var(--hue) 36% 57%);
-    --base-color-second: hsl(var(--hue) 65% 88%);
-    --base-color-alt: hsl(var(--hue) 57% 53%);
-    --title-color: hsl(var(--hue) 41% 10%);
-    --text-color: hsl(0 0% 46%);
-    --text-color-light: hsl(0 0% 98%);
-    --body-color: hsl(0 0% 98%);
-  }
-  /*----------------------------BASE---------------------*/
-  body {
-    font: 400 1rem 'DM Sans', sans-serif;
-    color: var(--text-color);
-    background: var(--body-color);
-    -webkit-font-smoothing: antialiased;
-  }
+.center{
+
+  text-align: center;
+}

@@ -3,10 +3,10 @@ from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 tarefas = [
-    {"texto": "Estudar para a prova", "concluida": False},
-    {"texto": "Passear com o cachorro", "concluida": True},
-    {"texto": "Estudar mais para a prova", "concluida": False},
-    {"texto": "Estudar para a prova", "concluida": True},
+    {"texto": "Volkswagen Gol 2013", "concluida": "R$ 29.900,00"},
+    {"texto": "Porsche 911 2021", "concluida": "R$ 2.159.990,00"},
+    {"texto": "Jaguar F-Type 2016", "concluida": "R$ 379.900,00"},
+    {"texto": "Ford Mustang 2021", "concluida": "R$ 594.000,00"},
 ]
 
 @app.route('/')
@@ -24,18 +24,21 @@ def save():
     tarefa = { "texto": texto, "concluida": status }
     tarefas.append(tarefa)
 
-    return redirect('https://5000-amethyst-aardvark-kj35cvxz.ws-us18.gitpod.io/')
+    return redirect('https://5000-ivory-squirrel-yi6vyyb0.ws-us17.gitpod.io/')
 
 @app.route('/busca', methods=['POST'])
 def pes():
     result = []
     resultado = request.form['pesquisa']
+    resultado = resultado.lower()
+    if resultado == "":
+        return render_template('erro.html') 
     for i in tarefas:
-        if resultado in i['texto']:            
+        if resultado in i['texto'].lower():            
             result.append(i)     
 
     if not result:
-        return render_template('erro.html')
+        return render_template('erro.html') 
 
     return render_template('busca.html', lista2=result)  
 
