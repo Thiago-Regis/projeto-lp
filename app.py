@@ -36,7 +36,9 @@ def pes():
     for i in tarefas:
         if resultado in i['texto'].lower():            
             result.append(i)     
-
+    for i in tarefas:
+        if resultado in i['concluida'].lower():            
+            result.append(i)  
     if not result:
         return render_template('erro.html') 
 
